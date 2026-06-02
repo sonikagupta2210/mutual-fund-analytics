@@ -1,0 +1,37 @@
+DATA QUALITY SUMMARY
+
+Project: Mutual Fund Analytics
+Date: Day 1 – Data Ingestion & Validation
+
+1. Dataset Inventory
+
+| Dataset                  | Rows   | Columns | Missing Values | Duplicates |
+| ------------------------ | ------ | ------- | -------------- | ---------- |
+| 01_fund_master           | 40     | 15      | 0              | 0          |
+| 02_nav_history           | 46,000 | 3       | 0              | 0          |
+| 03_aum_by_fund_house     | 90     | 5       | 0              | 0          |
+| 04_monthly_sip_inflows   | 48     | 6       | 12             | 0          |
+| 05_category_inflows      | 144    | 3       | 0              | 0          |
+| 06_industry_folio_count  | 21     | 6       | 0              | 0          |
+| 07_scheme_performance    | 40     | 19      | 0              | 0          |
+| 08_investor_transactions | 32,778 | 13      | 0              | 0          |
+| 09_portfolio_holdings    | 322    | 8       | 0              | 0          |
+| 10_benchmark_indices     | 8,050  | 3       | 0              | 0          |
+
+2. Key Findings
+
+* All datasets were successfully loaded and profiled.
+* No duplicate records were detected in any dataset.
+* No missing values were found in 9 out of 10 datasets.
+* Dataset 04_monthly_sip_inflows contains 12 missing values in the yoy_growth_pct column.
+* The missing YoY values are expected because year-over-year growth cannot be calculated for the earliest months in the series.
+
+3. Data Integrity Checks
+
+* AMFI scheme codes available in fund_master dataset.
+* Historical NAV records available for scheme-level analysis.
+* Performance, holdings, AUM, SIP, inflow and benchmark datasets are present and suitable for downstream analytics.
+
+4. Overall Assessment
+
+The dataset quality is high and suitable for exploratory data analysis (EDA), dashboard development, SQL analysis, statistical modeling, and mutual fund performance analytics. No critical data quality issues were identified during the ingestion stage.
